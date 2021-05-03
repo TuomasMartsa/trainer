@@ -20,7 +20,7 @@ function App() {
     <div className="App">
       <AppBar position="static">
         <Typography variant='h4'>
-              Personaltrainer Tuomas
+              Tuomas the Trainer
         </Typography>
         <Tabs 
           value={value} 
@@ -30,7 +30,6 @@ function App() {
           <Tab value = "one" label="Koti" />
           <Tab value = "two" label="Harjoitukset" />
           <Tab value = "three" label="Asiakkaat" />
-          <Tab value = "Four" label="Kalenteri" disabled />
         </Tabs>
        
       </AppBar>
