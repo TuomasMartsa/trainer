@@ -1,23 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import Trainings from './components/Trainings';
+import Home from './components/Home';
+import Customers from './components/Customers';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
+
 
 function App() {
+  const [value, setValue] = useState('one');
+
+  const handleChange = (event, value) => {
+    setValue(value);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <AppBar position="static">
+        <Typography variant='h4'>
+              Personaltrainer Tuomas
+        </Typography>
+        <Tabs 
+          value={value} 
+          onChange={handleChange}
+          centered
         >
-          Learn React
-        </a>
-      </header>
+          <Tab value = "one" label="Koti" />
+          <Tab value = "two" label="Harjoitukset" />
+          <Tab value = "three" label="Asiakkaat" />
+          <Tab value = "Four" label="Kalenteri" disabled />
+        </Tabs>
+       
+      </AppBar>
+      {value === 'one' && <Home />}
+      {value === 'two' && <Trainings />}
+      {value === 'three' && <Customers />}
     </div>
   );
 }
