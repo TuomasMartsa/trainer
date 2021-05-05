@@ -21,20 +21,15 @@ console.log(trainings)
 
 
 const events = trainings.map((training, id) => {
-    let date = new Date(training.date)
-    let date2 = new Date(moment(date).add('minutes', training.duration))
+
     const appts = {
         title: training.activity + ' ' + training.duration + ' mins. Customer: ' + 
         training.customer.firstname + ' ' + training.customer.lastname,
-        start: date,
-        end: date2
+        start: new Date(training.date),
+        end: new Date(moment(training.date).add('minutes', training.duration))
     }
-    console.log(date+ ' ' + date2)
     return appts
-})
-/* [
-    {  start: new Date(), end: new Date(), title: "testi tapahtuma"}
-] */;
+});
 
     return (
         <div className = "App">

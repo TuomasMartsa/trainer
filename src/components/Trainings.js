@@ -10,7 +10,6 @@ import 'ag-grid-community/dist/styles/ag-theme-material.css';
 
 function Trainings() {
     const [trainings, setTrainings] = useState([]);
-    const [date, setDate] = useState();
     const [open, setOpen] = useState(false);
 
     const openSnack = () => {

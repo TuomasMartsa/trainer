@@ -5,7 +5,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import SaveIcon from '@material-ui/icons/Save';
 import moment from 'moment/moment';
@@ -27,8 +26,6 @@ function AddTraining(props) {
         {value: 'Zumba'},
         {value: 'Muu'}
     ]
-
-    //console.log(now)
 
     const handleOpen = () => {
         setOpen(true);
@@ -54,7 +51,6 @@ function AddTraining(props) {
                 <DialogTitle id="form-dialog-title">Lisää treenin tiedot</DialogTitle>
                 <DialogContent>
                     <TextField
-                        //margin="dense"
                         label="Aika"
                         name='date'
                         type="datetime-local"
@@ -85,14 +81,7 @@ function AddTraining(props) {
                         onChange={InputChanged}
                         fullWidth
                     />
-{/*                     <TextField
-                        margin="dense"
-                        label="link"
-                        name='asiakas'
-                        value={props.link}
-                        onChange={InputChanged}
-                        fullWidth
-                    /> */}
+
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color="secondary" variant="outlined">
