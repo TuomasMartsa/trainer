@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { AgGridReact, AgGridColumn } from 'ag-grid-react';
+import { AgGridReact } from 'ag-grid-react';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Snackbar from '@material-ui/core/Snackbar';
@@ -35,7 +35,7 @@ function Customers() {
         .then(data => setCustomers(data.content))
         .catch(err => console.err(err))
     }
-//console.log(customers)
+
     const addCustomer = (newCustomer) => {
         fetch('https://customerrest.herokuapp.com/api/customers', {
             method: 'POST',

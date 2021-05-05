@@ -17,7 +17,7 @@ const fetchTrainings = () => {
     .then(data => setTrainings(data))
     .catch(err => console.error(err))
 }
-console.log(trainings)
+//console.log(trainings)
 
 
 const events = trainings.map((training, id) => {
@@ -26,7 +26,7 @@ const events = trainings.map((training, id) => {
         title: training.activity + ' ' + training.duration + ' mins. Customer: ' + 
         training.customer.firstname + ' ' + training.customer.lastname,
         start: new Date(training.date),
-        end: new Date(moment(training.date).add('minutes', training.duration))
+        end: new Date(moment(training.date).add(training.duration, 'minutes'))
     }
     return appts
 });
