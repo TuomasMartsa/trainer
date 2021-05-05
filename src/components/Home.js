@@ -23,7 +23,7 @@ const fetchTrainings = () => {
 const events = trainings.map((training, id) => {
 
     const appts = {
-        title: training.activity + ' ' + training.duration + ' mins. Customer: ' + 
+        title: training.activity + ' ' + training.duration + ' mins. Asiakas: ' + 
         training.customer.firstname + ' ' + training.customer.lastname,
         start: new Date(training.date),
         end: new Date(moment(training.date).add(training.duration, 'minutes'))
